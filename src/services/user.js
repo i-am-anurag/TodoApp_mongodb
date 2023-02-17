@@ -10,6 +10,11 @@ const User = require('../models/user');
         }
     }
 
+    const getUserById = async (userId) => {
+        const user = await User.findById(userId);
+        return user;
+    }
+
    const signup = async(data)=>{
         try {
             const user = await User.create(data);
@@ -42,5 +47,6 @@ const User = require('../models/user');
 
 module.exports = {
     signin,
-    signup
+    signup,
+    getUserById,
 }

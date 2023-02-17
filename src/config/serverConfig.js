@@ -10,4 +10,5 @@ const connect = async () => {
 module.exports = {
     connect:connect,
     PORT: process.env.PORT,
+    JWT_KEY:process.env.JWT_KEY,
 };
