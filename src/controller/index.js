@@ -1,4 +1,4 @@
 module.exports = {
-    userControllers:require('./auth'),
+    userControllers:require('./user'),
     taskControllers:require('./task'),
 }

@@ -1,5 +1,6 @@
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
+mongoose.set('strictQuery', true);
 
 dotenv.config();
 
@@ -11,4 +12,6 @@ module.exports = {
     connect:connect,
     PORT: process.env.PORT,
     JWT_KEY:process.env.JWT_KEY,
+    EMAIL_ID:process.env.EMAIL_ID,
+    EMAIL_PASS:process.env.EMAIL_PASS,
 };
