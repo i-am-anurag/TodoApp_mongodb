@@ -1,7 +1,6 @@
 const {userService} = require('../services/index');
-const { SuccessResponse, ErrorResponse } = require("../utils/response");
+const { SuccessResponse} = require("../utils/response");
 const asyncHandler = require('../utils/async-handler');
-
 
 const signup = asyncHandler(async (req, res) => {
     const requestData = {...req.body};

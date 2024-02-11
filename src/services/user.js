@@ -4,10 +4,6 @@ const {sendEmail} = require('../services/sendmail');
 const {ErrorResponse} = require('../utils/error');
 const {ClientErrorCodes} = require('../utils/status-code');
 
-const hashPassword = ()=>{
-
-}
-
 const getUserByEmail = async(email)=>{
     const user = await User.findOne({email});
 
@@ -22,7 +18,7 @@ const getUserById = async (userId) => {
 
 const signup = async(data)=>{
     const user = await User.create(data);
-
+    
     return user;
 }
 
@@ -60,7 +56,6 @@ const resetPassword = async (email) => {
 }
 
 const changePassword = async(otp,userId,newPassword) => {
-    console.log("user OTP is",otp);
     const otpRecord = await Otp.findOne({userId: userId });
     if(otpRecord.OTP!==otp)
         throw new ErrorResponse('OTP not match',

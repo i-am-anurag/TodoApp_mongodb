@@ -5,7 +5,8 @@ mongoose.set('strictQuery', true);
 dotenv.config();
 
 const connect = async () => {
-    await mongoose.connect('mongodb://localhost/todoApp_db');
+    // await mongoose.connect('mongodb://my-mongodb:27017/todoApp_db');
+    await mongoose.connect('mongodb://localhost/Todo_App');
 }
 
 module.exports = {

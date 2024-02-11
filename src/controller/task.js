@@ -38,7 +38,7 @@ const deleteTask = asyncHandler(async(req, res) => {
         const requestData = { ...req.params, userId: req.user._id};
         const responseData = await taskService.destroy(requestData.id,requestData.userId);
         const response = SuccessResponse(responseData, "Successfully delete task");
-
+        
         return res.OK(response);
 })
 

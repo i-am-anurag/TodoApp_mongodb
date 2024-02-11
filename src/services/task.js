@@ -4,7 +4,7 @@ const {ClientErrorCodes} = require('../utils/status-code');
 
 const create = async(data) => {
         const taskRecords = await Task.create(data);
-
+        
         return taskRecords;
 }
 

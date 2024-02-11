@@ -8,4 +8,4 @@ const router = express.Router();
 router.use('/',response,userRoutes);
 router.use('/user/task',response,taskRoutes);
 
-module.exports = router
+module.exports = router;
