@@ -5,10 +5,14 @@ const TaskSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    userId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-    },
+    // userId: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: "User",
+    // },
+    status:{
+        type:Boolean,
+        default:false,
+    }
 }, {timestamps: true});
 
 const Task = mongoose.model('Task', TaskSchema,'Task');

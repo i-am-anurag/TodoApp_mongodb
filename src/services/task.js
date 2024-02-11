@@ -26,6 +26,16 @@ const getAll = async(data,{userId})=>{
     return taskRecords;
 }
 
+const getTask = async(filer)=>{
+    try {
+        const data = await Task.find(filer);
+
+        return data;
+    } catch (error) {
+        console.log("Something went wrong to fetch data");
+    }
+}
+
 const update = async(taskId,data,userId) => {
         const updatedTask = await Task.findByIdAndUpdate({_id:taskId,userId},data,{new:true});
         if (!updatedTask) {
@@ -54,4 +64,5 @@ module.exports = {
     getAll,
     get,
     destroy,
+    getTask,
 }

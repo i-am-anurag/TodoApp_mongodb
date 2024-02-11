@@ -4,7 +4,7 @@ const {ClientErrorCodes,ServerErrorCodes,SuccessCodes} = require("../utils/statu
 const asyncHandler = require('../utils/async-handler');
 
 const createTask = asyncHandler(async(req, res) => {
-        const params = { ...req.body, ...req.params, userId: req.user._id }
+        const params = { ...req.body}
         const responseData = await taskService.create(params);
         const response = SuccessResponse(responseData, "Successfully created a task");
 
